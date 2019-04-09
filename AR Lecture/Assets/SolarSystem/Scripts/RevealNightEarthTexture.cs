@@ -3,17 +3,17 @@ using System.Collections;
 
 public class RevealNightEarthTexture : MonoBehaviour {
 
-	Transform tfLight;
+	public Transform tfLight;
 	
 	
 	// Use this for initialization
 	void Start () {
-		var goLight = GameObject.Find ("RevealingLight");
+		/*var goLight = GameObject.Find ("RevealingLight");
 		if(goLight)
 		{
 			tfLight = goLight.transform;
 			Debug.Log("Half light");
-		}
+		}*/
 	
 	}
 	
@@ -22,7 +22,7 @@ public class RevealNightEarthTexture : MonoBehaviour {
 	
 		if(tfLight)
 		{
-            tfLight.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 4.3f);
+            // tfLight.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 4.3f);
 			GetComponent<Renderer>().material.SetVector("_LightPos", tfLight.position);
 			GetComponent<Renderer>().material.SetVector("_LightDir", tfLight.forward);
 		}
