@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gravity.unity
     guid: c579024e38040684c95bff1ed8cb202e
+  - enabled: 1
+    path: Assets/Scenes/Season.unity
+    guid: eb6c01bba4f68124180aeec4814a96bb
   m_configObjects: {}
