@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Revolution : MonoBehaviour
+public class PlanetUI : MonoBehaviour
 {
-	public float dayPerCycle;
-	public float speed;
+	public int browseIndex;
 	
     // Start is called before the first frame update
     void Start()
     {
-        speed = 360f/dayPerCycle/24f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * -1f * speed * Time.deltaTime * SimulatorConsole.instance.simulationSpeed);
+        
     }
+	
+	void OnMouseDown()
+	{
+		PlanetBrowser.instance.Browse(browseIndex);
+	}
 }

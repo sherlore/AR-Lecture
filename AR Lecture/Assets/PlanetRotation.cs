@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Revolution : MonoBehaviour
+public class PlanetRotation : MonoBehaviour
 {
-	public float dayPerCycle;
-	public float speed;
+	public float dayPerCycle; 
 	
     // Start is called before the first frame update
     void Start()
     {
-        speed = 360f/dayPerCycle/24f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * -1f * speed * Time.deltaTime * SimulatorConsole.instance.simulationSpeed);
+        transform.Rotate(Vector3.up * -1f * 360/dayPerCycle * Time.deltaTime * SolarSysyemConsole.instance.simulationSpeed);
     }
 }

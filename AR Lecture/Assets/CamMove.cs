@@ -26,6 +26,7 @@ public class CamMove : MonoBehaviour {
 		float r = Input.GetAxis("Turn");
 		transform.Rotate(Vector3.up * r * Time.deltaTime * scaleR);
 		float rv = Input.GetAxis("TurnV");
-		childCam.Rotate(Vector3.right * rv * Time.deltaTime * scaleRv);
+				
+		childCam.Rotate(Vector3.right * rv * Time.deltaTime * scaleRv *-1f);
 	}
 }
