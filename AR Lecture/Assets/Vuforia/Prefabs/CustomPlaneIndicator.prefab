@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4169582747025834}
   - component: {fileID: 114015790878076588}
   m_Layer: 0
-  m_Name: DefaultPlaneIndicator
+  m_Name: CustomPlaneIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 4435016822728788}
   - component: {fileID: 33032586182132574}
   - component: {fileID: 23827494792507640}
-  - component: {fileID: 6452540730003899056}
+  - component: {fileID: 7762530620733691170}
   m_Layer: 0
   m_Name: DefaultIndicator
   m_TagString: Untagged
@@ -128,7 +128,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6452540730003899056
+--- !u!114 &7762530620733691170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

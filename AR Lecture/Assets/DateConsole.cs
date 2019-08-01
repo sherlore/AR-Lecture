@@ -43,6 +43,11 @@ public class DateConsole : MonoBehaviour
 		
 		Debug.Log("dateNow: " + dateNow);
 		dateText.text = String.Format("日期: {0}", dateNow.ToString("yyyy/MM/dd") );
-		timeText.text = String.Format("時間: {0}", dateNow.ToString("HH:mm") );
+		if(CoordConsole.instance.timeZone > 0)
+			timeText.text = String.Format("時間: {0} (UTC+{1})", dateNow.ToString("HH:mm"), CoordConsole.instance.timeZone );
+		else if(CoordConsole.instance.timeZone < 0)
+			timeText.text = String.Format("時間: {0} (UTC{1})", dateNow.ToString("HH:mm"), CoordConsole.instance.timeZone );
+		else
+			timeText.text = String.Format("時間: {0} (UTC)", dateNow.ToString("HH:mm"), CoordConsole.instance.timeZone );
 	}
 }

@@ -6,22 +6,24 @@ public class PreferenceMenu : MonoBehaviour
 {
 	public bool isMinimize;
 	public Vector3 minimized;
+	public float minimizedTime;
+	public float minimizedSpeed = 2f;
 	
     // Start is called before the first frame update
     void Start()
     {
-        
+        minimizedTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
 		if(!isMinimize)
-			transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, 0.1f);
+			transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, (Time.time - minimizedTime) * minimizedSpeed );
 			// myRect.sizeDelta = Vector2.Lerp(myRect.sizeDelta, Vector2.one, 0.1f);
 			// showPos = transform.localPosition;
 		else
-			transform.localScale = Vector3.Lerp(transform.localScale, minimized, 0.1f);
+			transform.localScale = Vector3.Lerp(transform.localScale, minimized, (Time.time - minimizedTime) * minimizedSpeed );
 			// myRect.sizeDelta = Vector2.Lerp(myRect.sizeDelta, Vector2.zero, 0.1f);
 			// hidePos = transform.localPosition;        
     }
@@ -29,5 +31,6 @@ public class PreferenceMenu : MonoBehaviour
 	public void SetMinimize()
 	{
 		isMinimize = !isMinimize;
+        minimizedTime = Time.time;
 	}
 }

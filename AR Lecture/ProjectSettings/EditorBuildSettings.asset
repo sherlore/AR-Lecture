@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Lecture/MainMenu.unity
     guid: 680c5401c49d6544ebcd56e082da9407
   - enabled: 1
-    path: Assets/Scenes/Solar System.unity
-    guid: 842e80d5c55297849b34cbb59b17b1b0
+    path: Assets/Lecture/Season.unity
+    guid: 647e936c02b0e1a48a781b2000dd0757
+  - enabled: 1
+    path: Assets/Lecture/Solar system.unity
+    guid: df11aca10ee29ef44b05d572995dccbf
   - enabled: 1
     path: Assets/Scenes/Gravity.unity
     guid: c579024e38040684c95bff1ed8cb202e
-  - enabled: 1
-    path: Assets/Scenes/Season.unity
-    guid: eb6c01bba4f68124180aeec4814a96bb
   m_configObjects: {}
