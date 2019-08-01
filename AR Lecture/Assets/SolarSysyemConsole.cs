@@ -10,7 +10,7 @@ public class SolarSysyemConsole : MonoBehaviour
 	public float planetSize = 0.001f;
 	public float obritWidth = 0.5f;
 	public float time;
-	public float realtime;
+	// public float realtime;
 	
 	
 	void Awake()
@@ -27,7 +27,7 @@ public class SolarSysyemConsole : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime * simulationSpeed;
-		realtime = Time.time;
+		// realtime = Time.time;
     }
 	
 	

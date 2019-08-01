@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CoordConsole : MonoBehaviour
 {
+	public static CoordConsole instance;	
 	public Transform observer;
 	public Transform coordRef;
 	
@@ -13,6 +14,16 @@ public class CoordConsole : MonoBehaviour
 	
 	public Text latitudeText;
 	public Text longtitudeText;
+	
+	public float timeZone;
+	
+    // Start is called before the first frame update
+    void Awake()
+    {
+        CoordConsole.instance = this;
+		SerLatitude(latitude);
+		SerLongtitude(longtitude);
+    }
 	
     // Start is called before the first frame update
     void Start()
@@ -35,8 +46,11 @@ public class CoordConsole : MonoBehaviour
 	
 	public void SerLongtitude(float val)
 	{
-		longtitude = val * -1f;
-		longtitudeText.text = string.Format("經度: {0}", val);
+		longtitude = val;
+		longtitudeText.text = string.Format("經度: {0}", longtitude);
+		
+		timeZone = Mathf.FloorToInt(longtitude/15f);
+		
 		SetCoord();
 	}
 	
@@ -44,6 +58,6 @@ public class CoordConsole : MonoBehaviour
 	{
 		observer.localRotation = Quaternion.identity;
 		observer.RotateAround(coordRef.position, coordRef.right, latitude);
-		observer.RotateAround(coordRef.position, coordRef.forward, longtitude);
+		observer.RotateAround(coordRef.position, coordRef.forward, longtitude * -1f);
 	}
 }

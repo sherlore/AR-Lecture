@@ -16,6 +16,8 @@ public class Revolution : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * -1f * speed * Time.deltaTime * SimulatorConsole.instance.simulationSpeed);
+        // transform.Rotate(Vector3.up * -1f * speed * Time.deltaTime * SimulatorConsole.instance.simulationSpeed);
+		
+		transform.localRotation = Quaternion.AngleAxis(speed * -1f * SimulatorConsole.instance.time, Vector3.up);
     }
 }
