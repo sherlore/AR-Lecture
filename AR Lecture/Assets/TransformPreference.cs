@@ -10,7 +10,8 @@ public class TransformPreference : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initScale = transform.localScale;
+        // initScale = transform.localScale;
+		transform.localScale = initScale;
 		FixHeight(initHeight);
     }
 
@@ -25,6 +26,9 @@ public class TransformPreference : MonoBehaviour
 		// Debug.Log("FixScale: " + val);
 		
 		transform.localScale = initScale * val;
+		
+		BroadcastMessage("RefreshOrbitWidth");
+		
 	}
 	
 	public void FixHeight(float val)
@@ -32,5 +36,12 @@ public class TransformPreference : MonoBehaviour
 		// Debug.Log("FixScale: " + val);
 		
 		transform.localPosition = Vector3.up * initHeight * val;
+	}
+	
+	public void FixRotation(float val)
+	{
+		// Debug.Log("FixScale: " + val);
+		
+		transform.localEulerAngles = Vector3.up * val;
 	}
 }

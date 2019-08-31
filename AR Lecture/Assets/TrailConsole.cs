@@ -80,8 +80,11 @@ public class TrailConsole : MonoBehaviour
 	
 	public void IndependTrail()
 	{
-		nowTrail.transform.parent = null;
-		nowTrail = null;
+		if(nowTrail != null)
+		{
+			nowTrail.transform.parent = null;
+			nowTrail = null;
+		}
 	}
 	
 	public void AddTrail()
