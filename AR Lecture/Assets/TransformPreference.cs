@@ -27,7 +27,7 @@ public class TransformPreference : MonoBehaviour
 		
 		transform.localScale = initScale * val;
 		
-		BroadcastMessage("RefreshOrbitWidth");
+		// BroadcastMessage("RefreshOrbitWidth", SendMessageOptions.DontRequireReceiver);
 		
 	}
 	

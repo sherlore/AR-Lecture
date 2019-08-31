@@ -20,6 +20,6 @@ public class Projection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = pEarth.position + mEarth.InverseTransformVector(mSelf.position - mEarth.position) * scale;
+        transform.localPosition = pEarth.position + mEarth.InverseTransformVector(mSelf.position - mEarth.position) * scale;
     }
 }

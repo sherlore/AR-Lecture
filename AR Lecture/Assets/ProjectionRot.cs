@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectionRot : MonoBehaviour
 {
+	public Transform root;
 	public Transform cam;
 	
     // Start is called before the first frame update
@@ -15,6 +16,6 @@ public class ProjectionRot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localRotation = cam.rotation;
+        transform.localRotation = cam.rotation * Quaternion.Inverse(root.rotation);
     }
 }

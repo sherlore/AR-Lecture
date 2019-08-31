@@ -13,7 +13,7 @@ public class TrailConsole : MonoBehaviour
 	public TrailRenderer nowTrailRenderer;
 	bool drawTrail;
 	public List<GameObject> trailSet;
-	
+	// public Transform skySphere;
 	
 	public Image colorButtonImg;
 	public Color drawColor;
