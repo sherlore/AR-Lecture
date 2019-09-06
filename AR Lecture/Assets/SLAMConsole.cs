@@ -13,8 +13,7 @@ public class SLAMConsole : MonoBehaviour
 	public Camera cam;
 	// public bool isARmode;
 	
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SLAMConsole.instance = this;
     }
