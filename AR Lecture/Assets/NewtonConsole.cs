@@ -46,7 +46,7 @@ public class NewtonConsole : MonoBehaviour
 			{
 				burstForceLog.text = "*錯誤，非數字輸入";
 			} 
-			predictAcc.text = String.Format("{0:F2}", burstForce/mass);
+			predictAcc.text = String.Format("{0:F2} M/S^2", burstForce/mass);
 		}
 	}
 	public Text burstForceLog;
