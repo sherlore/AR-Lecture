@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NewtonRocket : MonoBehaviour
 {
 	public bool isLaunching;
-	public Rigidbody rb;
+	// public Rigidbody rb;
 	// public Vector3 velocity;
 	public float initVelocity;
 	public float burstForce;
@@ -26,9 +27,13 @@ public class NewtonRocket : MonoBehaviour
 	
 	public TrailRenderer trail;
 	
-	// public float velocity;
-	// public float mass;
-	// public float acc;
+	public GameObject burstEngine;
+	public Text stopReason;
+	public UIZoom info;
+	
+	public float velocity;
+	public float mass;
+	public float acc;
 	
     // Start is called before the first frame update
     void Start()
@@ -55,40 +60,50 @@ public class NewtonRocket : MonoBehaviour
 		if(isLaunching)
 		{
 			
-			if(Time.fixedTime - launchTime >= limitedTime || Vector3.Distance(launchPos, transform.position) >= limitedDistance)
+			if(Time.fixedTime - launchTime >= limitedTime)
 			{
+				stopReason.text = "因抵達\n極限飛行時間\n而停止";
+				info.SetMinimize(false);
+				Stop();
+				return;
+			}			
+			else if(Vector3.Distance(launchPos, transform.position) >= limitedDistance)
+			{
+				stopReason.text = "因抵達\n極限飛行距離\n而停止";
+				info.SetMinimize(false);
 				Stop();
 				return;
 			}
 			
-			// rb.velocity += transform.forward * (burstForce/rb.mass) * Time.fixedDeltaTime;
+			float t = Time.fixedTime - launchTime;
+			float displacement = initVelocity * t + 0.5f * acc * t * t ;
+			transform.localPosition = Vector3.forward * displacement;
 			
 			if( Time.fixedTime - dotTimer >= dotPeriod )
 			{
 				dotTimer = Time.fixedTime;
-				GameObject dot = (GameObject)Instantiate(dotPrefab, dotRef.position, dotRef.rotation);
-				dot.transform.localScale = transform.lossyScale;
+				GameObject dot = (GameObject)Instantiate(dotPrefab, dotRef.position, dotRef.rotation, transform.parent);
+				dot.transform.localScale = Vector3.one;
 				
-				//Physics run cord at halfFrame
-				float nowVelocity = rb.velocity.magnitude;
+				// float nowVelocity = rb.velocity.magnitude;
+				float nowVelocity = velocity;
 				float accVelocity = nowVelocity - initVelocity;
 				float halfFrame = 0.5f * Time.fixedDeltaTime;
 				float error = halfFrame * accVelocity;
-				// Debug.Log(System.String.Format("halfFrameDisplacement  {0:F5}s", halfFrameDisplacement) );
 				
 				
 				NewtonDot dotInfo = dot.GetComponent<NewtonDot>();
-				dotInfo.timerInfo.text = System.String.Format("打點  {0:F5}s", Time.fixedTime - launchTime);
-				// dotInfo.distanceInfo.text = System.String.Format("位移: {0:F5}", Vector3.Distance(launchPos, transform.position) - halfFrameDisplacement);
-				dotInfo.distanceInfo.text = System.String.Format("位移: {0:F5}", Vector3.Distance(launchPos, transform.position) - error);
-				dotInfo.velocityInfo.text = System.String.Format("速度: {0:F5}", nowVelocity);
+				dotInfo.timerInfo.text = System.String.Format("打點  {0:F2}s", Time.fixedTime - launchTime);
+				// dotInfo.distanceInfo.text = System.String.Format("位移: {0:F3}", Vector3.Distance(launchPos, transform.position) - error);
+				dotInfo.distanceInfo.text = System.String.Format("位移: {0:F3}", displacement);
+				dotInfo.velocityInfo.text = System.String.Format("速度: {0:F3}", nowVelocity);
 				
 				dot.SetActive(true);
 			}
 			
-			rb.AddForce(transform.forward * burstForce);
+			// rb.AddForce(transform.forward * burstForce);
 			// rb.velocity += transform.forward * (burstForce/rb.mass) * Time.fixedDeltaTime;
-			
+			velocity += acc * Time.fixedDeltaTime;
 			
 			
 		}
@@ -106,19 +121,24 @@ public class NewtonRocket : MonoBehaviour
 		isLaunching = true;
 		launchTime = Time.fixedTime;
 		launchPos = transform.position;
-		// dotTimer = Time.fixedTime + Time.fixedDeltaTime;
 		dotTimer = Time.fixedTime;
 		trail.widthMultiplier *= transform.lossyScale.x;
-		// velocity = initVelocity;
-		// acc = burstForce/mass;		
-		rb.velocity = transform.forward * initVelocity;
+		
+		
+		// rb.velocity = transform.forward * initVelocity;
+		acc = burstForce/mass;		
+		velocity = initVelocity;
+		
 	}
 	
 	public void Stop()
 	{
 		isLaunching = false;
-		rb.velocity = Vector3.zero;
-		// velocity = 0;
+		burstEngine.SetActive(false);
+		
+		// rb.velocity = Vector3.zero;
+		velocity = 0;
+		
 		Debug.Log("Stop");
 	}
 }

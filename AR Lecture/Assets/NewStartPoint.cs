@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewtonDot : MonoBehaviour
+public class NewStartPoint : MonoBehaviour
 {
-	public Text timerInfo;
-	public Text distanceInfo;
-	public Text velocityInfo;
+	public Text burstForceInfo;
+	public Text massInfo;
+	public Text InitvelocityInfo;
 	public UIZoom info;
 	
     // Start is called before the first frame update
@@ -32,13 +32,8 @@ public class NewtonDot : MonoBehaviour
 		info.SetMinimize(!info.isMinimize);
 	}
 	
-	public void ShowAllInfo()
+	public void DeleteRocket()
 	{
-		info.SetMinimize(false);
-	}
-	
-	public void HideAllInfo()
-	{
-		info.SetMinimize(true);
+		Destroy(gameObject);
 	}
 }

@@ -8,6 +8,7 @@ public class NewtonConsole : MonoBehaviour
 {
 	public static NewtonConsole instance;
 	
+	public GameObject rocketStartPointPrefab;
 	public GameObject rocketPrefab;
 	public Transform launchRef;
 	
@@ -160,8 +161,16 @@ public class NewtonConsole : MonoBehaviour
 	
 	public void LaunchRockt()
 	{
-		GameObject rocket = (GameObject)Instantiate(rocketPrefab, launchRef.position, launchRef.rotation);
-		rocket.transform.localScale = launchRef.lossyScale;
+		
+		GameObject rocketStartPoint = (GameObject)Instantiate(rocketStartPointPrefab, launchRef.position, launchRef.rotation);
+		rocketStartPoint.transform.localScale = launchRef.lossyScale;
+		NewStartPoint rocketStartPointInfo = rocketStartPoint.GetComponent<NewStartPoint>();
+		rocketStartPointInfo.burstForceInfo.text = String.Format("推進力: {0}", burstForce);
+		rocketStartPointInfo.massInfo.text = String.Format("火箭質量: {0}", mass);
+		rocketStartPointInfo.InitvelocityInfo.text = String.Format("初始速度: {0}", initVelocity);
+		
+		GameObject rocket = (GameObject)Instantiate(rocketPrefab, launchRef.position, launchRef.rotation, rocketStartPoint.transform);
+		rocket.transform.localScale = Vector3.one;
 		NewtonRocket rocketInfo = rocket.GetComponent<NewtonRocket>();
 		
 		rocketInfo.initVelocity = initVelocity;
@@ -169,8 +178,8 @@ public class NewtonConsole : MonoBehaviour
 		rocketInfo.limitedTime = limitedTime;
 		rocketInfo.limitedDistance = limitedDistance;
 		rocketInfo.dotPeriod = dotPeriod;
-		rocketInfo.rb.mass = mass;
-		// rocketInfo.mass = mass;
+		// rocketInfo.rb.mass = mass;
+		rocketInfo.mass = mass;
 		rocketInfo.FixedTimeLaunch();
 	}
 }

@@ -12,7 +12,7 @@ public class TransformPreference : MonoBehaviour
     {
         // initScale = transform.localScale;
 		transform.localScale = initScale;
-		FixHeight(initHeight);
+		// FixHeight(initHeight);
     }
 
     // Update is called once per frame

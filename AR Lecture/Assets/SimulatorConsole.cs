@@ -13,6 +13,8 @@ public class SimulatorConsole : MonoBehaviour
 	public Slider timeSlider;
 	public bool isManualTime;
 	
+	public bool isPause;
+	
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,7 +31,7 @@ public class SimulatorConsole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if(isManualTime) return;
+		if(isManualTime || isPause) return;
 		
         time += Time.deltaTime * simulationSpeed;
 		if(time > maximumTime)
@@ -42,6 +44,25 @@ public class SimulatorConsole : MonoBehaviour
 	public void SetTime(float val)
 	{
 		time = val;
+	}
+	
+	public void JumpTime(float val)
+	{
+		time += val;
+		if(time > maximumTime)
+		{
+			time -= maximumTime;
+		}
+		else if(time < 0)
+		{
+			time += maximumTime;
+		}
+		timeSlider.value = time;
+	}
+	
+	public void SetPause(bool val)
+	{
+		isPause = val;
 	}
 	
 	public void TimeSliderManual(bool isManual)
