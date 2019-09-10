@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Lecture/Newton.unity
     guid: 183fa9a45468995468913aa33f883033
+  - enabled: 1
+    path: Assets/Lecture/Info.unity
+    guid: d21ce05ac25db4e4587c0d7eb3c9425e
   m_configObjects: {}

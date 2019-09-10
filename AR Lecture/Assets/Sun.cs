@@ -21,6 +21,16 @@ public class Sun : MonoBehaviour
 	
 	void Init()
 	{
+		RefreshScale();
+	}
+	
+	public void RefreshScale()
+	{
 		transform.localScale = Vector3.one * planetRadius * SolarSysyemConsole.instance.planetSize * sunSize;
+	}
+	
+	public void SetSunSize(float val)
+	{
+		sunSize = val;
 	}
 }

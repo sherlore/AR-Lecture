@@ -37,4 +37,9 @@ public class SolarSysyemConsole : MonoBehaviour
 		
 		simulationSpeed = val/simulationSpeedRatio;
 	}
+	
+	public void SetPlanetSize(float val)
+	{
+		planetSize = val/1000000f;
+	}
 }
