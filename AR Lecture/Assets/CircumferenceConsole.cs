@@ -57,7 +57,6 @@ public class CircumferenceConsole : MonoBehaviour
 		get { return String.Empty; }
 		set 
 		{ 
-			mass = float.Parse(value); 
 			try
 			{
 				float massInput = float.Parse(value); 

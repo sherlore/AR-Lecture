@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class NewtonDot : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class NewtonDot : MonoBehaviour
 	
 	void OnMouseDown()
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) return;
+		
 		info.SetMinimize(!info.isMinimize);
 	}
 	

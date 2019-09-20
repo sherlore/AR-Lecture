@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Lecture/Solar system.unity
     guid: df11aca10ee29ef44b05d572995dccbf
   - enabled: 1
-    path: Assets/Scenes/Gravity.unity
-    guid: c579024e38040684c95bff1ed8cb202e
-  - enabled: 1
     path: Assets/Lecture/Newton.unity
     guid: 183fa9a45468995468913aa33f883033
   - enabled: 1
@@ -26,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Lecture/Circumference.unity
     guid: 1aabbdbc095569d4cb00d23854925b3e
+  - enabled: 1
+    path: Assets/Lecture/Gravity.unity
+    guid: 108e28ab634561548a0482feb36913be
   m_configObjects: {}

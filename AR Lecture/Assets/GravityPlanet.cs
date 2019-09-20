@@ -3,26 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlanetUI : MonoBehaviour
+public class GravityPlanet : MonoBehaviour
 {
-	public int browseIndex;
+	public float mass = 5.97f;
+	public float radius;
 	
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.localScale = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * radius, 0.05f);
     }
 	
 	void OnMouseDown()
 	{
 		if (EventSystem.current.IsPointerOverGameObject()) return;
 		
-		PlanetBrowser.instance.Browse(browseIndex);
+		GravityConsole.instance.Select(this);
 	}
+	
 }

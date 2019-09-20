@@ -44,4 +44,18 @@ public class TransformPreference : MonoBehaviour
 		
 		transform.localEulerAngles = Vector3.up * val;
 	}
+	
+	public void FixRotationX(float val)
+	{
+		// Debug.Log("FixScale: " + val);
+		
+		transform.localEulerAngles = Vector3.right * val;
+	}
+	
+	public void FixRotationZ(float val)
+	{
+		// Debug.Log("FixScale: " + val);
+		
+		transform.localEulerAngles = Vector3.forward * val;
+	}
 }

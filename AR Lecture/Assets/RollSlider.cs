@@ -33,7 +33,7 @@ public class RollSlider : MonoBehaviour
         if(rollVal != 0)
 		{
 			paramVal += rollVal * paramVal * Time.deltaTime;
-			paramVal = paramVal < 0 ? 0: paramVal;
+			// paramVal = paramVal < 0 ? 0: paramVal;
 			
 			title.text = System.String.Format(titleString, paramVal);
 			

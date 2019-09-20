@@ -33,4 +33,22 @@ public class PreferenceMenu : MonoBehaviour
 		isMinimize = !isMinimize;
         minimizedTime = Time.time;
 	}
+	
+	public void Show()
+	{
+		if(isMinimize)
+		{
+			isMinimize = false;
+			minimizedTime = Time.time;
+		}
+	}
+	
+	public void Hide()
+	{
+		if(!isMinimize)
+		{
+			isMinimize = true;
+			minimizedTime = Time.time;
+		}
+	}
 }
