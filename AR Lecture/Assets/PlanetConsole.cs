@@ -16,6 +16,9 @@ public class PlanetConsole : MonoBehaviour
 	
 	public int orbitResolution;
 	public LineRenderer orbit;
+		
+	// public float beginOffset;
+	// private float beginOffsetRadian;
 	
     // Start is called before the first frame update
     void Start()

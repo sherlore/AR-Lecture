@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44060677, g: 0.4892416, b: 0.5693829, a: 1}
+  m_Sun: {fileID: 743982208}
+  m_IndirectSpecularColor: {r: 0.44060677, g: 0.48924196, b: 0.56938344, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -503,6 +503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 103259122}
   - component: {fileID: 103259123}
+  - component: {fileID: 103259124}
   m_Layer: 12
   m_Name: OrbitCenter
   m_TagString: Untagged
@@ -532,13 +533,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103259121}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 009c01ab211b339459e1d8487ef4f2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dayPerCycle: 365.256
   speed: 0.00274
+--- !u!114 &103259124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103259121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad5be78633013f4fab59fb14da8129e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunFar: 152.1
+  aAxis: 149.5979
+  bAxis: 149.57703
+  planet: {fileID: 1569653212}
+  dayPerCycle: 365.256
+  rSpeed: 0
+  scale: 0.03
+  beginOffset: 90
 --- !u!1 &133218878
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -945.752}
+  m_AnchoredPosition: {x: 0, y: -320.14993}
   m_SizeDelta: {x: 300, y: 1891.7}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!1 &200527168
@@ -3287,7 +3308,7 @@ Transform:
   m_GameObject: {fileID: 555578708}
   m_LocalRotation: {x: -0.25984463, y: -0.1321357, z: 0.94947636, w: -0.11625697}
   m_LocalPosition: {x: 9.44, y: -999.76, z: 5.44}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 657810047}
   m_RootOrder: 0
@@ -7723,8 +7744,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 430769142}
   m_HandleRect: {fileID: 430769141}
   m_Direction: 2
-  m_Value: 0.99991137
-  m_Size: 0.41604194
+  m_Value: 0
+  m_Size: 0.6691468
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9677,6 +9698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1533849236}
   - component: {fileID: 1533849237}
+  - component: {fileID: 1533849238}
   m_Layer: 12
   m_Name: OrbitCenter
   m_TagString: Untagged
@@ -9706,13 +9728,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533849235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 009c01ab211b339459e1d8487ef4f2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dayPerCycle: 27.3215
   speed: 0.03333
+--- !u!114 &1533849238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533849235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad5be78633013f4fab59fb14da8129e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunFar: 0.4057
+  aAxis: 0.3844
+  bAxis: 0.3838
+  planet: {fileID: 1612357837}
+  dayPerCycle: 27.3215
+  rSpeed: 0
+  scale: 7
+  beginOffset: 90
 --- !u!1 &1535888024
 GameObject:
   m_ObjectHideFlags: 0
@@ -9868,7 +9910,7 @@ Transform:
   m_GameObject: {fileID: 1569653211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 4.45}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103259122}
   m_RootOrder: 0

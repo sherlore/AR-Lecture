@@ -31,14 +31,16 @@ public class DateConsole : MonoBehaviour
 	
 	public void ComputeDate()
 	{
-		float angle = Vector3.SignedAngle(earthOrbitCenter.forward, sun.forward, sun.up);
-		if(angle < 0) angle += 360f;
+		// float angle = Vector3.SignedAngle(earthOrbitCenter.forward, sun.forward, sun.up);
+		// if(angle < 0) angle += 360f;
 		
 		DateTime dateSummer = new DateTime(2019, 6, 22, 12, 0, 0, DateTimeKind.Utc);
 		
-		float daysFormSummer = Mathf.Lerp(0, 365.256f, angle/360f);
+		// float daysFromSummer = Mathf.Lerp(0, 365.256f, angle/360f);
+		float hoursFromSummer = SimulatorConsole.instance.timeSlider.value;
 		
-		DateTime dateNowUtc = dateSummer.AddDays(daysFormSummer);
+		// DateTime dateNowUtc = dateSummer.AddDays(daysFromSummer);
+		DateTime dateNowUtc = dateSummer.AddHours(hoursFromSummer);
 		DateTime dateNow = dateNowUtc.AddHours(CoordConsole.instance.timeZone);
 		
 		Debug.Log("dateNow: " + dateNow);
