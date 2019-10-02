@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PreferenceMenu : MonoBehaviour
 {
@@ -9,10 +10,24 @@ public class PreferenceMenu : MonoBehaviour
 	public float minimizedTime;
 	public float minimizedSpeed = 2f;
 	
+	public Image menuBtn;
+	public Color showColor;
+	public Color hideColor;
+	
+	
     // Start is called before the first frame update
     void Start()
     {
         minimizedTime = Time.time;
+		
+		if(isMinimize)
+		{
+			menuBtn.color = hideColor;
+		}
+		else
+		{
+			menuBtn.color = showColor;
+		}
     }
 
     // Update is called once per frame
@@ -32,6 +47,15 @@ public class PreferenceMenu : MonoBehaviour
 	{
 		isMinimize = !isMinimize;
         minimizedTime = Time.time;
+		
+		if(isMinimize)
+		{
+			menuBtn.color = hideColor;
+		}
+		else
+		{
+			menuBtn.color = showColor;
+		}
 	}
 	
 	public void Show()
@@ -40,6 +64,7 @@ public class PreferenceMenu : MonoBehaviour
 		{
 			isMinimize = false;
 			minimizedTime = Time.time;
+			menuBtn.color = showColor;
 		}
 	}
 	
@@ -49,6 +74,7 @@ public class PreferenceMenu : MonoBehaviour
 		{
 			isMinimize = true;
 			minimizedTime = Time.time;
+			menuBtn.color = hideColor;
 		}
 	}
 }

@@ -43,7 +43,7 @@ public class DateConsole : MonoBehaviour
 		DateTime dateNowUtc = dateSummer.AddHours(hoursFromSummer);
 		DateTime dateNow = dateNowUtc.AddHours(CoordConsole.instance.timeZone);
 		
-		Debug.Log("dateNow: " + dateNow);
+		// Debug.Log("dateNow: " + dateNow);
 		dateText.text = String.Format("日期: {0}", dateNow.ToString("yyyy/MM/dd") );
 		if(CoordConsole.instance.timeZone > 0)
 			timeText.text = String.Format("時間: {0} (UTC+{1})", dateNow.ToString("HH:mm"), CoordConsole.instance.timeZone );
