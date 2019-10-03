@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlanetUI : MonoBehaviour
+public class PlanetUI : MonoBehaviour, IPointerDownHandler
 {
 	public int browseIndex;
 	
@@ -19,10 +19,15 @@ public class PlanetUI : MonoBehaviour
         
     }
 	
-	void OnMouseDown()
+	/*void OnMouseDown()
 	{
 		if (EventSystem.current.IsPointerOverGameObject()) return;
 		
+		PlanetBrowser.instance.Browse(browseIndex);
+	}*/
+	
+	public void OnPointerDown (PointerEventData data)
+	{
 		PlanetBrowser.instance.Browse(browseIndex);
 	}
 }

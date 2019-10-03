@@ -249,6 +249,8 @@ public class GravityConsole : MonoBehaviour
 		
 		planetList.Add(planetInfo);
 		
+		Select(planetInfo);
+		
 	}
 	
 	public void DeletePlanet()

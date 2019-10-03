@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class NewStartPoint : MonoBehaviour
+public class NewStartPoint : MonoBehaviour, IPointerDownHandler
 {
 	public Text burstForceInfo;
 	public Text massInfo;
@@ -27,7 +28,12 @@ public class NewStartPoint : MonoBehaviour
 		info.SetMinimize(false);
 	}
 	
-	void OnMouseDown()
+	/*void OnMouseDown()
+	{
+		info.SetMinimize(!info.isMinimize);
+	}*/
+	
+	public void OnPointerDown (PointerEventData data)
 	{
 		info.SetMinimize(!info.isMinimize);
 	}

@@ -6,6 +6,7 @@ public class Revolution : MonoBehaviour
 {
 	public float dayPerCycle;
 	public float speed;
+	public float beginOffset;
 	
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,8 @@ public class Revolution : MonoBehaviour
     void Update()
     {
         // transform.Rotate(Vector3.up * -1f * speed * Time.deltaTime * SimulatorConsole.instance.simulationSpeed);
+        speed = 360f/dayPerCycle/24f;
 		
-		transform.localRotation = Quaternion.AngleAxis(speed * -1f * SimulatorConsole.instance.time, Vector3.up);
+		transform.localRotation = Quaternion.AngleAxis(speed * -1f * SimulatorConsole.instance.time + beginOffset, Vector3.up);
     }
 }

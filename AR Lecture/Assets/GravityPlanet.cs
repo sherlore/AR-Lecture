@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GravityPlanet : MonoBehaviour
+public class GravityPlanet : MonoBehaviour, IPointerDownHandler
 {
 	public float mass = 5.97f;
 	public float radius;
@@ -20,10 +20,15 @@ public class GravityPlanet : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * radius, 0.05f);
     }
 	
-	void OnMouseDown()
+	/*void OnMouseDown()
 	{
 		if (EventSystem.current.IsPointerOverGameObject()) return;
 		
+		GravityConsole.instance.Select(this);
+	}*/
+	
+	public void OnPointerDown (PointerEventData data)
+	{
 		GravityConsole.instance.Select(this);
 	}
 	

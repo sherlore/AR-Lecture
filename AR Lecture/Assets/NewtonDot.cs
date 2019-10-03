@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class NewtonDot : MonoBehaviour
+public class NewtonDot : MonoBehaviour, IPointerDownHandler
 {
 	public Text timerInfo;
 	public Text distanceInfo;
@@ -28,10 +28,15 @@ public class NewtonDot : MonoBehaviour
 		info.SetMinimize(false);
 	}
 	
-	void OnMouseDown()
+	/*void OnMouseDown()
 	{
 		if (EventSystem.current.IsPointerOverGameObject()) return;
 		
+		info.SetMinimize(!info.isMinimize);
+	}*/
+	
+	public void OnPointerDown (PointerEventData data)
+	{
 		info.SetMinimize(!info.isMinimize);
 	}
 	

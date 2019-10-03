@@ -49,5 +49,6 @@ public class SatelliteSimple : MonoBehaviour
 		
 		rb.velocity = transform.forward * initVelocity;
 		trail.widthMultiplier = transform.lossyScale.x/2f;
+		// trail.minVertexDistance
 	}
 }

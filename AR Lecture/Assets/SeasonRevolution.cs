@@ -15,6 +15,9 @@ public class SeasonRevolution : MonoBehaviour
 	public float beginOffset;
 	private float beginOffsetRadian;
 	
+	
+	public string tag;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +34,11 @@ public class SeasonRevolution : MonoBehaviour
 		Vector3 z = Vector3.forward * (bAxis * Mathf.Sin(rSpeed * SimulatorConsole.instance.time + beginOffsetRadian) );
 		
         planet.localPosition = (x + z) * scale;
+		
+		if(!Input.GetButtonDown("Jump") ) return;
+		
+		float angle = rSpeed * SimulatorConsole.instance.time + beginOffsetRadian;
+		angle *= 180f/Mathf.PI;
+		Debug.Log(tag + Mathf.RoundToInt(angle)%360);
     }
 }
