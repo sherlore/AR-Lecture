@@ -16,7 +16,7 @@ public class RabboniToggle : RabboniControl
 	{
 		if(val.z > 8000f)
 		{
-			if(toggle.isOn)
+			if(!toggle.isOn)
 			{
 				toggle.isOn = true;
 			}

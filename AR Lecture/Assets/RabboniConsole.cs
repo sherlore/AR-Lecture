@@ -124,6 +124,11 @@ public class RabboniConsole : MonoBehaviour
 		}, null, false, false);
 	}
 	
+	void OnDestroy()
+	{
+		StopScan();
+	}
+	
 	public void StopScan()
 	{
 		BluetoothLEHardwareInterface.StopScan ();

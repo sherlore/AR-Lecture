@@ -145,6 +145,14 @@ public class RabboniConnection : MonoBehaviour
 		});
 	}
 	
+	void OnDestroy()
+	{
+		if(isConnecting)
+		{
+			Disconnect();
+		}
+	}
+	
 	public void Disconnect()
 	{
 		BluetoothLEHardwareInterface.DisconnectPeripheral (targetAddress, (disconnectedAddress) => {
