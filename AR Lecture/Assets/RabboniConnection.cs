@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RabboniConnection : MonoBehaviour
 {
 	public string ServiceUUID = "1600";
-	public string Characteristic = "FFE1";
+	public string Characteristic = "1601";
 	
 	public Dropdown sensorList;
 	public GameObject scanHint;
@@ -32,11 +32,11 @@ public class RabboniConnection : MonoBehaviour
     {
 		isConnecting = false;
 		sensorList.interactable = false;
+		
 		SetScanList(RabboniConsole.instance.rabboniList);
 		RabboniConsole.instance.AddConnection(this);
 		sensorList.interactable = true;
 		
-		connectBtn.interactable = false;
 		connectBtn.gameObject.SetActive(true);
 		disconnectBtn.gameObject.SetActive(false);
 		
@@ -140,7 +140,6 @@ public class RabboniConnection : MonoBehaviour
 			isConnecting = false;
 			SetScanList(RabboniConsole.instance.rabboniList);
 			sensorList.interactable = true;
-			connectBtn.interactable = true;
 			connectBtn.gameObject.SetActive(true);
 			disconnectBtn.gameObject.SetActive(false);
 		});

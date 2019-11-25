@@ -20,7 +20,11 @@ public class RabboniRoll : RabboniControl
 		}
 		else if(val.x > 4000f)
 		{
-			slider.value = Mathf.Lerp(0, 1f, (val.x-4000f)/12000f  );
+			slider.value = Mathf.Lerp(0, -1f, (val.x-4000f)/12000f  );
+		}
+		else
+		{
+			slider.value = 0f;
 		}
 		
 	}

@@ -93,6 +93,12 @@ public class RabboniConsole : MonoBehaviour
 	public void Scan()
 	{
 		rabboniList.Clear();
+		
+		for(int i=0; i<rabboniConnections.Count; i++)
+		{
+			rabboniConnections[i].SetScanList(rabboniList);
+		}
+				
 		statusText.text = "正在掃描Rabboni...";
 		
 		btnScan.gameObject.SetActive(false);

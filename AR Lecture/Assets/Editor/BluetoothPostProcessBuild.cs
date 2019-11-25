@@ -19,7 +19,8 @@ public class BluetoothPostProcessBuild
 			// Get root
 			PlistElementDict rootDict = plist.root;
 
-			rootDict.SetString("NSBluetoothPeripheralUsageDescription", "Uses BLE to communicate with devices.");
+			// rootDict.SetString("NSBluetoothPeripheralUsageDescription", "Uses BLE to communicate with devices.");
+			rootDict.SetString("NSBluetoothPeripheralUsageDescription", "使用藍芽連接感測裝置");
 
 			// Write to file
 			File.WriteAllText(plistPath, plist.WriteToString());
