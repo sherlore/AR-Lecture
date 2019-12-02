@@ -109,7 +109,6 @@ public class RabboniConnection : MonoBehaviour
 	{
 		selectIndex = val;
 		targetAddress = myRabonniList[selectIndex];
-		connectBtn.interactable = sensorList.interactable;
 	}
 	
 	public void Connect()
@@ -134,15 +133,20 @@ public class RabboniConnection : MonoBehaviour
 				}
 			}
 		}, (disconnectedAddress) => {
-			BluetoothLEHardwareInterface.Log ("Device disconnected: " + disconnectedAddress);
+			// BluetoothLEHardwareInterface.Log ("Device disconnected: " + disconnectedAddress);
+			RabboniConsole.instance.BLEDisconnect(disconnectedAddress);
 			
-			statusText.text = "連線狀態: 連線中斷";
-			isConnecting = false;
-			SetScanList(RabboniConsole.instance.rabboniList);
-			sensorList.interactable = true;
-			connectBtn.gameObject.SetActive(true);
-			disconnectBtn.gameObject.SetActive(false);
 		});
+	}
+	
+	public void OnBLEDisconnect()
+	{
+		statusText.text = "連線狀態: 連線中斷";
+		isConnecting = false;
+		SetScanList(RabboniConsole.instance.rabboniList);
+		sensorList.interactable = true;
+		connectBtn.gameObject.SetActive(true);
+		disconnectBtn.gameObject.SetActive(false);
 	}
 	
 	void OnDestroy()
@@ -156,7 +160,12 @@ public class RabboniConnection : MonoBehaviour
 	public void Disconnect()
 	{
 		BluetoothLEHardwareInterface.DisconnectPeripheral (targetAddress, (disconnectedAddress) => {
-			
+			/*statusText.text = "連線狀態: 連線中斷";
+			isConnecting = false;
+			SetScanList(RabboniConsole.instance.rabboniList);
+			sensorList.interactable = true;
+			connectBtn.gameObject.SetActive(true);
+			disconnectBtn.gameObject.SetActive(false);*/
 		});
 	}
 	

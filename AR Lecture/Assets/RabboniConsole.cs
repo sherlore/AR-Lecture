@@ -90,6 +90,17 @@ public class RabboniConsole : MonoBehaviour
 		});
 	}
 	
+	public void BLEDisconnect(string address)
+	{
+		for(int i=0; i<rabboniConnections.Count; i++)
+		{
+			if(rabboniConnections[i].targetAddress == address)
+			{
+				rabboniConnections[i].OnBLEDisconnect();
+			}
+		}
+	}
+	
 	public void Scan()
 	{
 		rabboniList.Clear();
