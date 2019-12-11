@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4169582747025834}
   - component: {fileID: 114015790878076588}
+  - component: {fileID: 5861933999284459453}
   m_Layer: 0
-  m_Name: CustomPlaneIndicator
+  m_Name: DefaultPlaneIndicator 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +51,18 @@ MonoBehaviour:
   mSelectedStageType: 0
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
+--- !u!114 &5861933999284459453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353731089078378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa25e04607b6704094de0d224518a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1497045824638220
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +74,6 @@ GameObject:
   - component: {fileID: 4435016822728788}
   - component: {fileID: 33032586182132574}
   - component: {fileID: 23827494792507640}
-  - component: {fileID: 7762530620733691170}
   m_Layer: 0
   m_Name: DefaultIndicator
   m_TagString: Untagged
@@ -128,15 +140,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7762530620733691170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497045824638220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa25e04607b6704094de0d224518a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

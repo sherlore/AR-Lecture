@@ -2885,7 +2885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000033903645}
+  m_AnchoredPosition: {x: 0, y: 0.00008023363}
   m_SizeDelta: {x: 0, y: 571}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &326816478
@@ -6124,7 +6124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000014335983}
+  m_AnchoredPosition: {x: 0, y: 0.00003786061}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &707624659
@@ -7858,7 +7858,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1835288279}
   m_HandleRect: {fileID: 1835288278}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10304,7 +10304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000771344}
+  m_AnchoredPosition: {x: 0, y: -0.000052889165}
   m_SizeDelta: {x: 0, y: 850.4}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1381331114
@@ -11234,14 +11234,14 @@ MonoBehaviour:
   m_Script: {fileID: 422107450, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaneIndicator: {fileID: 1353731089078378, guid: 083a35188d3c0644c88e55963fd088f1,
+  PlaneIndicator: {fileID: 1353731089078378, guid: 44a501596d691f04386b308d077d231d,
     type: 3}
   Height: 1.4
   OnInteractiveHitTest:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465940905}
-        m_MethodName: PositionContentAtPlaneAnchor
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

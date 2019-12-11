@@ -156,7 +156,7 @@ PlayerSettings:
     Android: com.MIR.ARLecture
     iOS: com.MIR.ARLecture
   buildNumber: {}
-  AndroidBundleVersionCode: 3
+  AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
