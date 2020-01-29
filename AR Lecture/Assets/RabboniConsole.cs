@@ -10,7 +10,7 @@ public class RabboniConsole : MonoBehaviour
 	public Transform rabboniConnectionParent;
 	public GameObject rabboniConnectionPrefab;
 	
-    public string DeviceName = "NAXSEN";
+    public string[] deviceName = new string[]{"NAXSEN", "Rabboni", "rabboni", "RABBONI"};
 		
 	public Text statusText;	
 		
@@ -119,19 +119,21 @@ public class RabboniConsole : MonoBehaviour
 
 			// we only want to look at devices that have the name we are looking for
 			// this is the best way to filter out devices
-			if (name.Contains (DeviceName))
+			for(int index = 0; index < deviceName.Length; index++)
 			{
-				// _workingFoundDevice = true;
-				
-				rabboniList.Add(address);
-				
-				
-				for(int i=0; i<rabboniConnections.Count; i++)
+				if (name.Contains (deviceName[index]))
 				{
-					rabboniConnections[i].SetScanList(rabboniList);
+					// _workingFoundDevice = true;
+					
+					rabboniList.Add(address);
+					
+					
+					for(int i=0; i<rabboniConnections.Count; i++)
+					{
+						rabboniConnections[i].SetScanList(rabboniList);
+					}
 				}
 			}
-
 		}, null, false, false);
 	}
 	

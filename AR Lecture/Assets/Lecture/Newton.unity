@@ -2885,7 +2885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00008023363}
+  m_AnchoredPosition: {x: 0, y: 0.0007972561}
   m_SizeDelta: {x: 0, y: 571}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &326816478
@@ -6124,7 +6124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00003786061}
+  m_AnchoredPosition: {x: 0, y: 0.000082814935}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &707624659
@@ -8250,7 +8250,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 256683942}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 0.92547596
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8852,7 +8852,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 157179576}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 0.9999985
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10304,7 +10304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000052889165}
+  m_AnchoredPosition: {x: 0, y: 63.37465}
   m_SizeDelta: {x: 0, y: 850.4}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1381331114
@@ -14899,7 +14899,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rabboniConnectionParent: {fileID: 707624658}
   rabboniConnectionPrefab: {fileID: 151941100}
-  DeviceName: NAXSEN
+  deviceName:
+  - NAXSEN
+  - Rabboni
+  - rabboni
+  - RABBONI
   statusText: {fileID: 712774169}
   rabboniConnections: []
   rabboniList: []

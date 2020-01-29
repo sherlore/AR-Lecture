@@ -17147,7 +17147,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1377037269}
   m_HandleRect: {fileID: 1377037268}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -17250,7 +17250,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 660679404}
   m_HandleRect: {fileID: 660679402}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -21547,7 +21547,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 253282047}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999871
+  m_Size: 0.9999992
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24179,7 +24179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000027382031}
+  m_AnchoredPosition: {x: 0, y: 22.074118}
   m_SizeDelta: {x: 0, y: 809.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1034661831
@@ -25750,7 +25750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000033215629}
+  m_AnchoredPosition: {x: 0, y: -0.0000386936}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1136939964
@@ -27737,7 +27737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00010781615}
+  m_AnchoredPosition: {x: 0, y: 0.00046617416}
   m_SizeDelta: {x: 0, y: 474.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1228892605
@@ -41676,7 +41676,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1321769920}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 0.9727173
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -45139,7 +45139,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rabboniConnectionParent: {fileID: 2133289745}
   rabboniConnectionPrefab: {fileID: 63754367}
-  DeviceName: NAXSEN
+  deviceName:
+  - NAXSEN
+  - Rabboni
+  - rabboni
+  - RABBONI
   statusText: {fileID: 715641741}
   rabboniConnections: []
   rabboniList: []
@@ -46341,7 +46345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00002378947}
+  m_AnchoredPosition: {x: 0, y: 0.00006390144}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2133289746
